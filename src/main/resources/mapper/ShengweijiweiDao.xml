@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShengweijiweiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShengweijiweiEntity" id="shengweijiweiMap">
+        <result property="shengweizhanghao" column="shengweizhanghao"/>
+        <result property="mima" column="mima"/>
+        <result property="nicheng" column="nicheng"/>
+        <result property="suoshushengfen" column="suoshushengfen"/>
+        <result property="lianxifangshi" column="lianxifangshi"/>
+        <result property="jianjie" column="jianjie"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShengweijiweiVO" >
+		SELECT * FROM shengweijiwei  shengweijiwei         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShengweijiweiVO" >
+		SELECT  shengweijiwei.* FROM shengweijiwei  shengweijiwei
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShengweijiweiView" >
+
+		SELECT  shengweijiwei.* FROM shengweijiwei  shengweijiwei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShengweijiweiView" >
+		SELECT * FROM shengweijiwei  shengweijiwei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
